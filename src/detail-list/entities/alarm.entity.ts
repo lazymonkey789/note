@@ -10,8 +10,6 @@ import {
 
 @Entity()
 export class Alarm extends BaseEntity {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
   @Column()
   LineNo: string;
   @Column()
@@ -48,4 +46,7 @@ export class Alarm extends BaseEntity {
   UpdateTime: Date;
   @DeleteDateColumn({ type: 'datetime' })
   deletedAt: Date;
+
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 }
