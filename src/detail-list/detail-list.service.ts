@@ -1,6 +1,6 @@
 import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { Repository } from 'typeorm';
-import { CreateAlarmDto } from './dto/alarm.dto';
+import { CreateAlarmDto, UpdateAlarmDto } from './dto/alarm.dto';
 import { Alarm } from './entities/alarm.entity';
 
 @Injectable()
@@ -32,7 +32,7 @@ export class DetailListService {
     return 'Delete Success';
   }
 
-  async update(id: string, updateData: CreateAlarmDto): Promise<string> {
+  async update(id: string, updateData: UpdateAlarmDto): Promise<string> {
     await this.detaillistRepository.update(id, updateData);
     return 'update Success';
   }
